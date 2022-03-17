@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function kiemtraHoten(){
+            let maukt = /^([A-Za-z]+)((\s{1}[A-Za-z]+){1,})/;
+            let chuoi = document.getElementById('txtKT').value.trim();
+            if(maukt.test(chuoi)==true){
+                spkt.innerText = "Dung cu phap";
+            }
+            else{
+                spkt.innerText = "Sai cu phap";
+            }
+        }
+    </script>
+    <form action="" method="post" style="width: 500px;">
+        <fieldset>
+            <legend>Nhap chuoi can kiem tra</legend>
+            <label for="lbkt">Chuoi Kiem tra</label>
+            <input type="text" name="txtKT" id="txtKT" onblur="return kiemtraHoten();">
+            <span id="spkt">*</span>
+        </fieldset>
+    </form>
+</body>
+</html>
